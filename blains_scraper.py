@@ -1,9 +1,7 @@
 from selenium import webdriver
-from selenium import webdriver
 from time import sleep
 from pprint import pprint
 import pandas as pd
-
 
 
 def scrape():
@@ -43,7 +41,7 @@ if __name__ == '__main__':
     driver = webdriver.Chrome()
     url = 'https://www.farmandfleet.com/s/?keyword={}&pg={}'
 
-    for i in range(1,8):
+    for i in range(1,8): # TODO: Pull the number of pages from the search result information
         driver.get(url.format(search_term.replace(' ', '%20'),i))
         sleep(2)
         scrape()
